@@ -1,3 +1,4 @@
+import 'package:family_link/features/auth/ui/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
@@ -26,8 +27,8 @@ class _SplashScreenState extends State<SplashScreen> {
     bool firstLaunch = await SharedPreferencesController.to.isFirstLaunch();
     await Future.delayed(const Duration(seconds: 3));
     firstLaunch
-        ? Get.offNamed(MainBottomNavScreen.name)
-        : Get.offNamed(MainBottomNavScreen.name);
+        ? Get.offNamed(LogInScreen.name)
+        : Get.offNamed(LogInScreen.name);
   }
 
   @override

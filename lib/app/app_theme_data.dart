@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'app_color.dart';
 
-
-
 class AppThemeData {
-
   static ThemeData get lightThemeData {
     return ThemeData(
       colorSchemeSeed: AppColors.themeColor,
@@ -18,17 +15,12 @@ class AppThemeData {
         scrolledUnderElevation: 0,
       ),
       textTheme: const TextTheme(
-          titleLarge: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.w600,
-          )),
+        titleLarge: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+      ),
       inputDecorationTheme: const InputDecorationTheme(
         fillColor: Colors.white,
         filled: true,
-        hintStyle: TextStyle(
-          color: Colors.grey,
-          fontWeight: FontWeight.w400,
-        ),
+        hintStyle: TextStyle(color: Colors.grey, fontWeight: FontWeight.w400),
         contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         border: OutlineInputBorder(
           borderSide: BorderSide(color: AppColors.themeColor, width: 1),
@@ -52,9 +44,8 @@ class AppThemeData {
         ),
       ),
       textButtonTheme: TextButtonThemeData(
-          style: TextButton.styleFrom(
-            foregroundColor: AppColors.themeColor,
-          )),
+        style: TextButton.styleFrom(foregroundColor: AppColors.themeColor),
+      ),
       navigationBarTheme: NavigationBarThemeData(backgroundColor: Colors.white),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         backgroundColor: Colors.white,
