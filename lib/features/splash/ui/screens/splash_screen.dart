@@ -24,10 +24,10 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _endTheSplashScreen() async {
-    bool firstLaunch = await SharedPreferencesController.to.isFirstLaunch();
+    bool isLoggedIn = await SharedPreferencesController.to.isLoggedIn();
     await Future.delayed(const Duration(seconds: 3));
-    firstLaunch
-        ? Get.offNamed(LogInScreen.name)
+    isLoggedIn
+        ? Get.offNamed(MainBottomNavScreen.name)
         : Get.offNamed(LogInScreen.name);
   }
 

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:family_link/features/common/ui/controller/shared_preference_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -36,6 +37,9 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
       }
     });
   }
+
+  SharedPreferencesController sharedPreferencesController =
+      Get.find<SharedPreferencesController>();
 
   @override
   void initState() {
@@ -93,7 +97,9 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                   ),
                   const SizedBox(height: 16),
                   ElevatedButton(
-                    onPressed: _onTapNextButton,
+                    onPressed: () {
+                      _onTapNextButton(widget.email);
+                    },
                     child: const Text('Next'),
                   ),
 
@@ -135,9 +141,10 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
     );
   }
 
-  Future<void> _onTapNextButton() async {
+  Future<void> _onTapNextButton(String mail) async {
     if (_formKey.currentState!.validate()) {
       FocusScope.of(context).unfocus();
+      sharedPreferencesController.saveUserMail(mail);
       Navigator.pushNamedAndRemoveUntil(
         context,
         MainBottomNavScreen.name,
